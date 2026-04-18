@@ -112,7 +112,7 @@ button {
 
 </div>
 
-<button onclick="nextStep()">Next</button>
+<button onclick="PUSHStep()">PUSH</button>
 <button onclick="resetSim()">Refresh</button>
 
 <script>
@@ -147,7 +147,7 @@ function renderStack() {
     }
 }
 
-function nextStep() {
+function PUSHStep() {
     clearHighlight();
 
     let value = document.getElementById("valueInput").value;
