@@ -2,14 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-<!-- Mobile responsiveness -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Push operation simulator</title>
 
-<!-- Outfit Font -->
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
     body {
@@ -24,37 +21,38 @@
     /* Title */
     .title {
         text-align: center;
-        font-size: clamp(22px, 2vw, 34px);
+        font-size: 36px;
         font-weight: 600;
-        margin-top: 10px;
+        margin: 10px 0;
     }
 
     /* Instructions */
     .instructions {
         text-align: center;
-        font-size: clamp(16px, 1.5vw, 22px);
-        margin: 10px 0;
+        font-size: 22px;
+        margin-bottom: 10px;
     }
 
     /* Input */
     .input-section {
         text-align: center;
         margin-bottom: 10px;
+        font-size: 20px;
     }
 
     input {
-        padding: 8px;
-        font-size: clamp(16px, 1.2vw, 20px);
-        font-family: 'Outfit', sans-serif;
+        padding: 10px;
+        font-size: 20px;
+        width: 200px;
+        margin-left: 10px;
     }
 
     /* Main layout */
     .main {
         display: flex;
         flex: 1;
-        gap: 12px;
+        gap: 15px;
         padding: 10px;
-        box-sizing: border-box;
     }
 
     /* Code container */
@@ -62,17 +60,17 @@
         flex: 1;
         background: #2f2a44;
         color: #f9f9fa;
-        padding: 12px;
+        padding: 15px;
         border-radius: 12px;
+        font-size: 20px;
         overflow-y: auto;
-        font-size: clamp(16px, 1.2vw, 20px);
     }
 
     /* Stack container */
     .stack-container {
         flex: 1;
         background: #724b9e;
-        padding: 12px;
+        padding: 15px;
         border-radius: 12px;
         display: flex;
         flex-direction: column-reverse;
@@ -82,27 +80,28 @@
     .stack-block {
         background: #77a766;
         color: #f2f1e8;
-        padding: 12px;
-        margin: 6px;
-        width: 70%;
+        padding: 15px;
+        margin: 8px;
+        width: 60%;
         text-align: center;
-        border-radius: 6px;
-        font-size: clamp(16px, 1.2vw, 20px);
+        border-radius: 8px;
+        font-size: 20px;
+        font-weight: 500;
     }
 
     /* Buttons */
     .buttons {
         text-align: center;
-        margin-bottom: 10px;
+        margin: 10px 0;
     }
 
     button {
-        padding: 10px 20px;
+        padding: 12px 25px;
         margin: 5px;
+        font-size: 18px;
         border: none;
+        border-radius: 8px;
         cursor: pointer;
-        font-size: clamp(14px, 1vw, 18px);
-        border-radius: 6px;
         font-family: 'Outfit', sans-serif;
     }
 
@@ -119,15 +118,8 @@
     /* Footer */
     .footer {
         text-align: center;
-        font-size: clamp(12px, 0.9vw, 16px);
-        padding: 6px;
-    }
-
-    /* Mobile layout adjustment */
-    @media (max-width: 768px) {
-        .main {
-            flex-direction: column;
-        }
+        font-size: 16px;
+        padding: 5px;
     }
 
 </style>
@@ -135,40 +127,32 @@
 
 <body>
 
-<!-- Title -->
 <div class="title">Push operation simulator</div>
 
-<!-- Instructions -->
 <div class="instructions">
     Enter a value → Click Next to PUSH → Observe stack (LIFO) → Reset to restart
 </div>
 
-<!-- Input -->
 <div class="input-section">
-    <label>Enter value: </label>
+    <label>Enter value:</label>
     <input type="text" id="valueInput">
 </div>
 
-<!-- Main -->
 <div class="main">
 
-    <!-- Code -->
     <div class="code-container" id="codeBox">
         stack = []
     </div>
 
-    <!-- Stack -->
     <div class="stack-container" id="stackBox"></div>
 
 </div>
 
-<!-- Buttons -->
 <div class="buttons">
     <button class="next" onclick="pushValue()">Next</button>
     <button class="reset" onclick="resetStack()">Reset</button>
 </div>
 
-<!-- Footer -->
 <div class="footer">@curiousEd.ai</div>
 
 <script>
